@@ -92,6 +92,3 @@ func main() {
 
 
 }
-
-//array.items = append(array.items[:index], array.items[index+1:]...)
-//array.count--
