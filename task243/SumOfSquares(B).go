@@ -12,5 +12,6 @@ func GetPairs(number int) []int {
 	return result
 }
 
-
+func main()  {
+}
 

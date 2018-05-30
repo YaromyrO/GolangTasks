@@ -5,7 +5,6 @@ import (
 )
 
 func main()  {
-	
 }
 
 func FindNum(k int) int{
