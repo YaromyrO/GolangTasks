@@ -1,30 +1,21 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 func main() {
 
-	getPair(85)
+	fmt.Println(getPair(85))
 }
 
-func getPair(number int) {
+func getPair(number int) (int, int) {
 
-	appears := false
-	for x := 1; x < number/2; x++ {
-		_, div1 := math.Modf(math.Sqrt(float64(x)))
-		_, div2 := math.Modf(math.Sqrt(float64(number - x)))
-		if div1 == 0 && div2 == 0 {
-			appears = true
-			fmt.Println("Pair for", number, "is:", math.Sqrt(float64(x)), "and", math.Sqrt(float64(number-x)))
-			return
+	for i := 1; i * i <= number; i++ {
+		for j := 1; j * j <= number; j++ {
+			if i * i + j * j == number{
+				return i, j
+			}
 		}
 	}
-
-	if !appears {
-		fmt.Println("No sum of squares for", number)
-	}
+	return 0, 0
 }
 
