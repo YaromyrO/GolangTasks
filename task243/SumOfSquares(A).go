@@ -12,6 +12,3 @@ func GetPair(number int) []int {
 	}
 	return make([]int, 0)
 }
-
-func main()  {
-}
