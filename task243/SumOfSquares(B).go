@@ -1,13 +1,6 @@
 package main
 
-import "fmt"
-
-func main() {
-
-	fmt.Println(getPairs(200))
-}
-
-func getPairs(number int) []int {
+func GetPairs(number int) []int {
 	var result []int
 	for i := 1; i * i <= number; i++ {
 		for j := 1; j * j <= number; j++ {

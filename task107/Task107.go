@@ -2,15 +2,13 @@ package main
 
 import (
 	"math"
-	"fmt"
 )
 
-func main() {
-
-	findNum(756)
+func main()  {
+	
 }
 
-func findNum(k int){
+func FindNum(k int) int{
 	result := 0
 	if k > 1 {
 		for i := 1; i < k; i++{
@@ -18,6 +16,7 @@ func findNum(k int){
 				result = i
 			}
 		}
-		fmt.Println("Greates number is:", result)
+		return result
 	}
+	return 0
 }
