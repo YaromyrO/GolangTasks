@@ -11,4 +11,3 @@ func GetPairs(number int) []int {
 	}
 	return result
 }
-

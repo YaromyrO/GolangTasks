@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func testSumOfSquaresB(t *testing.T) {
+func TestSumOfSquaresB(t *testing.T) {
 	var tests = []struct{
 		input int
 		expected int
