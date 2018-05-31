@@ -4,9 +4,6 @@ import (
 	"math"
 )
 
-func main()  {
-}
-
 func FindNum(k int) int{
 	result := 0
 	if k > 1 {

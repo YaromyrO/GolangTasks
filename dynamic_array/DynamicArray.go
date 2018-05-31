@@ -87,8 +87,3 @@ func (array *DynamicArray) Clear() {
 	array.items = array.items[:0]
 	array.count = 0
 }
-
-func main() {
-
-
-}

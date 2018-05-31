@@ -84,6 +84,3 @@ func (stack Stack) IsEmpty() bool {
 	return false
 }
 
-func main() {
-	
-}
