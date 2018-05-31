@@ -9,5 +9,8 @@ func GetPairs(number int) []int {
 			}
 		}
 	}
-	return result
+	if result != nil {
+		return result
+	}
+	return make([]int, 0)
 }
