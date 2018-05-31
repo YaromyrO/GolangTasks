@@ -1,4 +1,4 @@
-package main
+package task243
 
 func TestEq(a, b []int) bool {
 	if a == nil && b == nil {

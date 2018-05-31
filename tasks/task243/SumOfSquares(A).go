@@ -1,4 +1,4 @@
-package main
+package task243
 
 func GetPair(number int) []int {
 	var result []int

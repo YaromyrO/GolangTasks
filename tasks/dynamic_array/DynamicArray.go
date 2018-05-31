@@ -1,4 +1,4 @@
-package main
+package dynamic_array
 
 type DynamicArray struct {
 	items []string
