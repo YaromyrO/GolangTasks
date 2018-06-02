@@ -3,8 +3,8 @@ package task107
 import "testing"
 
 func TestSumOfSquaresB(t *testing.T) {
-	var tests = []struct{
-		input int
+	var tests = []struct {
+		input    int
 		expected int
 	}{
 		{12, 1},

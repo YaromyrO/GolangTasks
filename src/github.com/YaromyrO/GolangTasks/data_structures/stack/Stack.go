@@ -1,12 +1,12 @@
 package stack
 
 type Stack struct {
-	top *node
+	top   *node
 	count int
 }
 type node struct {
 	value float64
-	next *node
+	next  *node
 }
 
 func NewStack() *Stack {
@@ -83,4 +83,3 @@ func (stack Stack) IsEmpty() bool {
 
 	return false
 }
-

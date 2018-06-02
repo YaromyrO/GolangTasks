@@ -1,13 +1,13 @@
 package queue
 
 type Queue struct {
-	rear *node
+	rear  *node
 	front *node
 	count int
 }
 
 type node struct {
-	value string
+	value    string
 	previous *node
 }
 

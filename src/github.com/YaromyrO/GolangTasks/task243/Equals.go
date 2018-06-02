@@ -2,11 +2,11 @@ package task243
 
 func TestEq(a, b []int) bool {
 	if a == nil && b == nil {
-		return true;
+		return true
 	}
 
 	if a == nil || b == nil {
-		return false;
+		return false
 	}
 
 	if len(a) != len(b) {
@@ -21,4 +21,3 @@ func TestEq(a, b []int) bool {
 
 	return true
 }
-

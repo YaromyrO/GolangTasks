@@ -5,8 +5,8 @@ import (
 )
 
 func TestSumOfSquaresA(t *testing.T) {
-	var tests = []struct{
-		input int
+	var tests = []struct {
+		input    int
 		expected []int
 	}{
 		{32, []int{4, 4}},
@@ -14,12 +14,11 @@ func TestSumOfSquaresA(t *testing.T) {
 		{40, []int{2, 6}},
 		{85, []int{2, 9}},
 		{444, []int{}},
-
 	}
 
 	for _, test := range tests {
 		if result := GetPair(test.input); !TestEq(result, test.expected) {
-			t.Error("GetPair(", test.input,") =", result)
+			t.Error("GetPair(", test.input, ") =", result)
 		}
 	}
 }
