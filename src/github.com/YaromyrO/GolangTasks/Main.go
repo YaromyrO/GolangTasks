@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../sorting/counting_sort"
+	"./sorting/counting_sort"
 	"fmt"
 	"math/rand"
 	"time"
