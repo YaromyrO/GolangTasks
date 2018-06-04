@@ -15,19 +15,18 @@ func CountingSort(slice []int) []int {
 		}
 	}
 
-	result := make([]int, len(slice))
-	counts := make([]int, max - min+1)
+	counts := make([]int, max-min+1)
 
-	for _,v := range slice {
+	for _, v := range slice {
 		counts[v-min]++
 	}
 
 	z := 0
 	for i, c := range counts {
 		for ; c > 0; c-- {
-			result[z] = i + min
+			slice[z] = i + min
 			z++
 		}
 	}
-	return result
+	return slice
 }
