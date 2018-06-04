@@ -1,46 +1,50 @@
 package merge_sort
 
-var input []int
+import "fmt"
 
-func MergeSort(in []int) []int {
-
-	input = in
-	doSort(0, len(input)-1)
-	return input
+func doCopy(vals []int) []int {
+	tmp := make([]int, len(vals))
+	copy(tmp, vals)
+	return tmp
 }
 
-func doSort(low, high int) {
-	if low < high {
-		middle := low + (high-low)/2
-		doSort(low, middle)
-		doSort(middle+1, high)
-		mergeSlice(low, middle, high)
-	}
-}
+func MergeSort(items []int) []int {
 
-func mergeSlice(low, middle, high int) {
+	if len(items) > 1 {
+		mid := len(items) / 2
+		left := doCopy(items[0:mid])
+		right := doCopy(items[mid:])
 
-	i := low
-	j := middle + 1
-	k := low
-	helper := make([]int, len(input))
+		fmt.Println("Left:", left, "Right:", right)
 
-	copy(helper, input)
+		MergeSort(left)
+		MergeSort(right)
 
-	for i <= middle && j <= high {
-		if helper[i] <= helper[j] {
-			input[k] = helper[i]
-			i++
-		} else {
-			input[k] = helper[j]
-			j++
+		l := 0
+		r := 0
+
+		for i := 0; i < len(items); i++ {
+
+			leftValue := -1
+			rightValue := -1
+
+			if l < len(left) {
+				leftValue = left[l]
+			}
+
+			if r < len(right) {
+				rightValue = right[r]
+			}
+
+			if (leftValue != -1 && rightValue != -1 && leftValue < rightValue) || rightValue == -1 {
+				items[i] = leftValue
+				l += 1
+			} else if (leftValue != -1 && rightValue != -1 && leftValue >= rightValue) || leftValue == -1 {
+				items[i] = rightValue
+				r += 1
+			}
+
 		}
-		k++
 	}
-
-	for i <= middle {
-		input[k] = helper[i]
-		k++
-		i++
-	}
+	return items
 }

@@ -1,11 +1,11 @@
 package quicksort
 
-func getPivot(input []int) int {
+func GetPivot(input []int) int {
 
 	return input[(len(input) / 2)]
 }
 
-func QuickSort(input []int, f func([]int) int) []int {
+func QuickSort(input []int, p func([]int) int) []int {
 
 	if len(input) <= 1 {
 		return input
@@ -15,7 +15,7 @@ func QuickSort(input []int, f func([]int) int) []int {
 	high := len(input) - 1
 	i := low
 	j := high
-	pivot := getPivot(input)
+	pivot := p(input)
 
 	if i < j {
 		for input[i] < pivot {
@@ -32,10 +32,10 @@ func QuickSort(input []int, f func([]int) int) []int {
 	}
 
 	if low < j {
-		QuickSort(input[low:j+1], nil)
+		QuickSort(input[low:j+1], GetPivot)
 	}
 	if i < high {
-		QuickSort(input[i:high+1], nil)
+		QuickSort(input[i:high+1], GetPivot)
 	}
 
 	return input
