@@ -2,41 +2,41 @@ package quicksort
 
 func GetPivot(input []int) int {
 
-	return input[len(input)/2]
+	if len(input) == 0{
+		return 0
+	}
+
+	return input[(len(input)-1) / 2]
 }
 
-func QuickSort(input []int, p func([]int) int) []int {
+func QuickSort(input []int, p func([]int) int) {
 
-	if len(input) <= 1 {
-		return input
-	}
+	if len(input) >= 2 {
 
-	low := 0
-	high := len(input) - 1
-	i := low
-	j := high
-	pivot := p(input)
+		left := make([]int, 0)
+		right := make([]int, 0)
+		middle := make([]int, 0)
+		pivot := p(input)
 
-	if i < j {
-		for input[i] < pivot {
-			i++
+		for _, v := range input {
+			if v < pivot {
+				left = append(left, v)
+			}
+			if v == pivot {
+				middle = append(middle, v)
+			}
+			if v > pivot {
+				right = append(right, v)
+			}
 		}
-		for input[j] > pivot {
-			j--
-		}
-		if i <= j {
-			input[i], input[j] = input[j], input[i]
-			i++
-			j--
-		}
-	}
 
-	if low < j {
-		QuickSort(input[low:j+1], GetPivot)
-	}
-	if i < high {
-		QuickSort(input[i:high+1], GetPivot)
-	}
+		QuickSort(left, GetPivot)
+		QuickSort(right, GetPivot)
 
-	return input
+		left = append(left, middle...)
+		left = append(left, right...)
+
+		copy(input, left)
+	}
 }
+

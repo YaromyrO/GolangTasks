@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./sorting/bucket_sort"
 	"./sorting/quicksort"
+	"./sorting/counting_sort"
 	"fmt"
 	"math/rand"
 	"time"
@@ -13,15 +13,16 @@ func main() {
 	s1 := rand.NewSource(time.Now().UnixNano())
 	r1 := rand.New(s1)
 
-	slice := make([]int, 10000)
+	slice := make([]int, 1000)
 	for i := range slice {
 		slice[i] = r1.Intn(200)
 	}
-	//slice := []int{10, 10, 10, 10, 10, 10, 10, 10, 10,}
+	//slice := []int{10, 15, 7, 5, 13, 22, 6, 9}
 	fmt.Println(slice)
-	fmt.Println(quicksort.QuickSort(slice, quicksort.GetPivot))
-	//fmt.Println(counting_sort.CountingSort(slice))
+	quicksort.QuickSort(slice, quicksort.GetPivot)
+	fmt.Println(slice)
+	fmt.Println(counting_sort.CountingSort(slice))
 	//fmt.Println(merge_sort.MergeSort(slice))
-	fmt.Println(bucket_sort.BucketSort(slice, bucket_sort.MsBits))
+	//fmt.Println(bucket_sort.BucketSort(slice, bucket_sort.MsBits))
 
 }
