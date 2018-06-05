@@ -2,7 +2,7 @@ package quicksort
 
 func GetPivot(input []int) int {
 
-	return input[(len(input) / 2)]
+	return input[len(input)/2]
 }
 
 func QuickSort(input []int, p func([]int) int) []int {

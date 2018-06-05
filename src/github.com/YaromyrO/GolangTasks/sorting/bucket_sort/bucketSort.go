@@ -30,7 +30,9 @@ func BucketSort(input []int, getIndex func([]int, int) int) []int {
 	}
 
 	for _, v := range input {
-		bucket[getIndex(input, v)] = sortBuckets(bucket[getIndex(input, v)])
+		if len(bucket[getIndex(input, v)]) < 1 && len(bucket[getIndex(input, v)]) != 0 {
+			bucket[getIndex(input, input[v])] = BucketSort(bucket[getIndex(input, input[v])], MsBits)
+		}
 	}
 
 	x := 0
@@ -41,19 +43,5 @@ func BucketSort(input []int, getIndex func([]int, int) int) []int {
 		}
 
 	}
-
 	return input
-}
-
-func sortBuckets(bucket []int) []int {
-	for i := 1; i < len(bucket); i++ {
-		temp := bucket[i]
-		j := i - 1
-		for j >= 0 && bucket[j] > temp {
-			bucket[j+1] = bucket[j]
-			j = j - 1
-		}
-		bucket[j+1] = temp
-	}
-	return bucket
 }
