@@ -1,11 +1,10 @@
 package main
 
 import (
-	"./sorting/quicksort"
-	"./sorting/counting_sort"
 	"fmt"
 	"math/rand"
 	"time"
+	"github.com/YaromyrO/GolangTasks/src/github.com/YaromyrO/GolangTasks/sorting/bucket_sort"
 )
 
 func main() {
@@ -19,10 +18,10 @@ func main() {
 	}
 	//slice := []int{10, 15, 7, 5, 13, 22, 6, 9}
 	fmt.Println(slice)
-	quicksort.QuickSort(slice, quicksort.GetPivot)
-	fmt.Println(slice)
-	fmt.Println(counting_sort.CountingSort(slice))
+	//quicksort.QuickSort(slice, quicksort.GetPivot)
+	//fmt.Println(slice)
+	//fmt.Println(counting_sort.CountingSort(slice))
 	//fmt.Println(merge_sort.MergeSort(slice))
-	//fmt.Println(bucket_sort.BucketSort(slice, bucket_sort.MsBits))
+	fmt.Println(bucket_sort.BucketSort(slice, bucket_sort.MsBits))
 
 }

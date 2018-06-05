@@ -20,7 +20,7 @@ func BucketSort(input []int, getIndex func([]int, int) int) []int {
 		return input
 	}
 
-	bucket := make(map[int][]int)
+	bucket := make([][]int, len(input))
 
 	for _, v := range input {
 		if len(bucket[getIndex(input, v)]) == 0 {
